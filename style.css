@@ -56,7 +56,7 @@ header nav ul li a:hover, header nav ul li a.active {
 /* HERO SEKCE (Úvodní velký blok s tvým vlastním staženým obrázkem) */
 .hero {
     /* Načte obrázek z tvé složky image */
-    background: url('images/uvod-porsche.jpg') no-repeat center center/cover;
+    background: url('img/uvod-porsche.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-/* ZÁKLADNÍ RESET A PÍSMO */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* HLAVIČKA A NAVIGACE */
+
 header {
     background-color: #111;
     color: #fff;
@@ -53,9 +53,9 @@ header nav ul li a:hover, header nav ul li a.active {
     padding-bottom: 5px;
 }
 
-/* HERO SEKCE (Úvodní velký blok s tvým vlastním staženým obrázkem) */
+
 .hero {
-    /* Načte obrázek z tvé složky image */
+    
     background: url('img/uvod-porsche.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
@@ -69,19 +69,19 @@ header nav ul li a:hover, header nav ul li a.active {
     letter-spacing: 2px;
     margin-bottom: 10px;
     color: #fff;
-    /* Stín pod textem, aby šel přečíst na tvém barevném obrázku */
+   
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
 }
 
 .hero p {
     font-size: 20px;
     color: #fff;
-    /* Stín pod podnadpisem */
+
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
 }
 
 
-/* HLAVNÍ OBSAH */
+
 .obsah {
     max-width: 1100px;
     margin: 40px auto;
@@ -94,7 +94,7 @@ header nav ul li a:hover, header nav ul li a.active {
     margin-bottom: 20px;
 }
 
-/* KARTY (FLEXBOX) */
+
 .karty-kontejner {
     display: flex;
     justify-content: space-between;
@@ -107,7 +107,7 @@ header nav ul li a:hover, header nav ul li a.active {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    flex: 1; /* Každá karta zabere stejný prostor */
+    flex: 1; 
 }
 
 .karta h3 {
@@ -115,7 +115,7 @@ header nav ul li a:hover, header nav ul li a.active {
     color: #111;
 }
 
-/* PATIČKA */
+
 footer {
     background-color: #111;
     color: #777;
@@ -125,16 +125,15 @@ footer {
     font-size: 14px;
 }
 
-/* RESPONSIVITA (Pro mobily a tablety) */
+
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Logo a menu budou pod sebou */
+        flex-direction: column;
         gap: 15px;
     }
 
     header nav ul {
-        flex-direction: column; /* Menu položky pod sebou */
-        align-items: center;
+        flex-direction: column; 
         gap: 10px;
     }
 
@@ -147,7 +146,7 @@ footer {
     }
 
     .karty-kontejner {
-        flex-direction: column; /* Karty se na mobilu naskládají pod sebe */
+        flex-direction: column; 
     }
 }
 
@@ -405,5 +404,113 @@ footer {
 @media (max-width: 768px) {
     .kontakt-blok {
         flex-direction: column;
+    }
+}
+
+
+
+/* --- STYLING PRO STRÁNKU ZAJÍMAVOSTÍ --- */
+
+.zajimavosti-kontejner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.zajimavosti-uvod {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.zajimavosti-uvod h1 {
+    font-size: 42px;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.zajimavosti-uvod p {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Mřížka pro boxy (2 sloupce na velkém monitoru) */
+.boxy-mrizka {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Samotný box se zajímavostí */
+.zajimavost-box {
+    background: #f9f9f9;
+    border-left: 5px solid #d50000; /* Porsche červená linie na boku */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt při najetí myší na box */
+.zajimavost-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.box-ikona {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.zajimavost-box h2 {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.zajimavost-box p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+/* Tlačítko zpět */
+.zajimavosti-paticka {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tlacitko-domu {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.tlacitko-domu:hover {
+    background-color: #d50000; /* Zčervená při najetí */
+}
+
+/* Responsivita pro menší obrazovky/mobily */
+@media (max-width: 600px) {
+    .boxy-mrizka {
+        grid-template-columns: 1fr; /* Na mobilu bude jen jeden sloupec */
+    }
+   
+    .zajimavosti-uvod h1 {
+        font-size: 30px;
     }
 }

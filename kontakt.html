@@ -17,6 +17,7 @@
                 <li><a href="historie.html">Historie</a></li>
                 <li><a href="motorsport.html">Motorsport</a></li>
                 <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                 <li><a href="zajimavosti.html">zajímavosti</a></li>
             </ul>
         </nav>
     </header>
@@ -41,7 +42,12 @@
                 </tr>
             </table>
 
-            
+            <form class="kontakt-formular" onsubmit="return false;">
+                <input type="text" placeholder="Vaše jméno" required>
+                <input type="email" placeholder="Váš E-mail" required>
+                <textarea placeholder="Vaše zpráva..." rows="5" required></textarea>
+                <button type="submit">Odeslat zprávu</button>
+            </form>
         </div>
     </main>
 

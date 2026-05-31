@@ -1,4 +1,4 @@
-
+/* ZÁKLADNÍ RESET A PÍSMO */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-
+/* HLAVIČKA A NAVIGACE */
 header {
     background-color: #111;
     color: #fff;
@@ -53,9 +53,9 @@ header nav ul li a:hover, header nav ul li a.active {
     padding-bottom: 5px;
 }
 
-
+/* HERO SEKCE (Úvodní velký blok s tvým vlastním staženým obrázkem) */
 .hero {
-    
+    /* Načte obrázek z tvé složky img */
     background: url('img/uvod-porsche.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
@@ -69,19 +69,19 @@ header nav ul li a:hover, header nav ul li a.active {
     letter-spacing: 2px;
     margin-bottom: 10px;
     color: #fff;
-   
+    /* Stín pod textem, aby šel přečíst na tvém barevném obrázku */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
 }
 
 .hero p {
     font-size: 20px;
     color: #fff;
-
+    /* Stín pod podnadpisem */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
 }
 
 
-
+/* HLAVNÍ OBSAH */
 .obsah {
     max-width: 1100px;
     margin: 40px auto;
@@ -94,7 +94,7 @@ header nav ul li a:hover, header nav ul li a.active {
     margin-bottom: 20px;
 }
 
-
+/* KARTY (FLEXBOX) */
 .karty-kontejner {
     display: flex;
     justify-content: space-between;
@@ -107,7 +107,7 @@ header nav ul li a:hover, header nav ul li a.active {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    flex: 1; 
+    flex: 1; /* Každá karta zabere stejný prostor */
 }
 
 .karta h3 {
@@ -115,7 +115,7 @@ header nav ul li a:hover, header nav ul li a.active {
     color: #111;
 }
 
-
+/* PATIČKA */
 footer {
     background-color: #111;
     color: #777;
@@ -125,15 +125,16 @@ footer {
     font-size: 14px;
 }
 
-
+/* RESPONSIVITA (Pro mobily a tablety) */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* Logo a menu budou pod sebou */
         gap: 15px;
     }
 
     header nav ul {
-        flex-direction: column; 
+        flex-direction: column; /* Menu položky pod sebou */
+        align-items: center;
         gap: 10px;
     }
 
@@ -146,7 +147,7 @@ footer {
     }
 
     .karty-kontejner {
-        flex-direction: column; 
+        flex-direction: column; /* Karty se na mobilu naskládají pod sebe */
     }
 }
 
@@ -408,109 +409,159 @@ footer {
 }
 
 
+/* ==========================================================================
+   STYLING PRO STRÁNKU ZAJÍMAVOSTÍ (DLOUHÉ ČTENÍ)
+   ========================================================================== */
 
-/* --- STYLING PRO STRÁNKU ZAJÍMAVOSTÍ --- */
-
+/* Hlavní obal stránky */
 .zajimavosti-kontejner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    max-width: 1250px;
+    margin: 40px auto 0 auto;
+    padding: 60px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #222;
+    background-color: #ffffff;
 }
 
+/* Úvodní hlavička */
 .zajimavosti-uvod {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .zajimavosti-uvod h1 {
-    font-size: 42px;
-    color: #111;
+    font-size: 46px;
+    font-weight: 800;
+    color: #fffefe;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
 }
 
 .zajimavosti-uvod p {
-    font-size: 18px;
-    color: #666;
-    max-width: 700px;
+    font-size: 19px;
+    color: #fffdfd;
+    max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
 }
 
-/* Mřížka pro boxy (2 sloupce na velkém monitoru) */
+/* Rozvržení boxů do mřížky (2 sloupce na PC) */
 .boxy-mrizka {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    gap: 35px;
+    margin-bottom: 50px;
 }
 
-/* Samotný box se zajímavostí */
+/* Styl samotného velkého boxu */
 .zajimavost-box {
-    background: #f9f9f9;
-    border-left: 5px solid #d50000; /* Porsche červená linie na boku */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fbfbfb;
+    border-top: 4px solid #d50000; /* Porsche červená na horní hraně boxu */
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
 }
 
-/* Efekt při najetí myší na box */
+/* Efekt zvednutí boxu při najetí myší */
 .zajimavost-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+    background: #fffdfd;
+}
+
+/* Hlavička uvnitř boxu (Ikona + Nadpis) */
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .box-ikona {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    background: #f7f4f4;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 .zajimavost-box h2 {
     font-size: 24px;
-    color: #111;
-    margin-bottom: 15px;
+    color: #ffffff04;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
 }
 
+/* Styling odstavců s textem - zarovnání do bloku pro čistý vzhled */
 .zajimavost-box p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 12px;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #3b3b3b;
+    margin-bottom: 18px;
     text-align: justify;
+    text-justify: inter-word;
 }
 
-/* Tlačítko zpět */
+/* Odstranění spodního marginu u posledního odstavce */
+.zajimavost-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Spodní patička s tlačítkem */
 .zajimavosti-paticka {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
 }
 
+/* Elegantní černé tlačítko */
 .tlacitko-domu {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 15px 35px;
     background-color: #111;
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .tlacitko-domu:hover {
-    background-color: #d50000; /* Zčervená při najetí */
+    background-color: #d50000; /* Při najetí zčervená */
+    transform: translateY(-2px);
 }
 
-/* Responsivita pro menší obrazovky/mobily */
-@media (max-width: 600px) {
+.tlacitko-domu:active {
+    transform: translateY(0);
+}
+
+/* Responzivní design pro menší monitory a mobily */
+@media (max-width: 768px) {
     .boxy-mrizka {
-        grid-template-columns: 1fr; /* Na mobilu bude jen jeden sloupec */
+        grid-template-columns: 1fr; /* Na mobilu se boxy seřadí pod sebe */
+        gap: 25px;
     }
-   
+    
+    .zajimavosti-kontejner {
+        padding: 40px 15px;
+    }
+
     .zajimavosti-uvod h1 {
-        font-size: 30px;
+        font-size: 32px;
+    }
+
+    .zajimavost-box {
+        padding: 25px;
+    }
+    
+    .zajimavost-box p {
+        text-align: left; /* Na mobilu je lepší zarovnání vlevo */
     }
 }
+
